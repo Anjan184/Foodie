@@ -25,5 +25,7 @@ public class Hotel {
     @JsonManagedReference
     private List<MenuItems> menuItems=new ArrayList<>();
 
-
+    public Hotel(String hotelId) {
+        this.hotelId = hotelId;
+    }
 }

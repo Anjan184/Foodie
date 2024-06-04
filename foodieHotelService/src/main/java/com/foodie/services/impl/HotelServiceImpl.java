@@ -57,6 +57,7 @@ public class HotelServiceImpl implements HotelService {
         }
 
     public Hotel findHotelById(String hotelId){
+
     return hotelRepository.findHotelById(hotelId).get();
     }
     }

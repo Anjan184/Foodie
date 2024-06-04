@@ -7,6 +7,7 @@ import com.foodie.services.UserService;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -21,10 +22,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public User saveUser(User user) {
         String randomUserId = UUID.randomUUID().toString();
         user.setUserid(randomUserId);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
        return userRepository.save(user);
     }
 
