@@ -1,0 +1,37 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: FOODIE-GATEWAY-SERVICE
+
+  cloud:
+    gateway:
+      routes:
+        - id: FOODIE-USER-SERVICE
+          uri: lb://FOODIE-USER-SERVICE
+          predicates:
+            - Path=/users/**
+
+        - id: FOODIE-HOTEL-SERVICE
+          uri: lb://FOODIE-HOTEL-SERVICE
+          predicates:
+            - Path=/hotel/** ,/items/**
+
+        - id: FOODIE-ORDER-SERVICE
+          uri: lb://FOODIE-ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
+#  config:
+#    import: configserver:http://localhost:8085
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
