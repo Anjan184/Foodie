@@ -11,7 +11,7 @@ spring:
         - id: FOODIE-USER-SERVICE
           uri: lb://FOODIE-USER-SERVICE
           predicates:
-            - Path=/auth/login,/users/**,/auth/validate
+            - Path=/auth/login,/users/**
 
 
         - id: FOODIE-HOTEL-SERVICE
