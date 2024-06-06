@@ -1,6 +1,6 @@
-package com.foodie.order.DTO;
+package com.foodie.DTO;
 
-import com.foodie.order.Helper.MenuItems;
+import com.foodie.Helper.MenuItems;
 import lombok.Data;
 
 import java.time.LocalDateTime;

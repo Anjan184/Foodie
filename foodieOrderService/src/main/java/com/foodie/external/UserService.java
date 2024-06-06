@@ -1,4 +1,4 @@
-package com.foodie.order.external;
+package com.foodie.external;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 

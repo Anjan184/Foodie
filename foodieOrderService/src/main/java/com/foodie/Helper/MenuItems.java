@@ -1,4 +1,4 @@
-package com.foodie.order.Helper;
+package com.foodie.Helper;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Table;

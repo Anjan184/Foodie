@@ -1,8 +1,8 @@
-package com.foodie.order.controllers;
+package com.foodie.controllers;
 
-import com.foodie.order.DTO.OrderDTO;
-import com.foodie.order.entity.Order;
-import com.foodie.order.services.OrderService;
+import com.foodie.DTO.OrderDTO;
+import com.foodie.entity.Order;
+import com.foodie.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

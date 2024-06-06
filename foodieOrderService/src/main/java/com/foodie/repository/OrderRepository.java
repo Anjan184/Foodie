@@ -1,6 +1,6 @@
-package com.foodie.order.repository;
+package com.foodie.repository;
 
-import com.foodie.order.entity.Order;
+import com.foodie.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, String> {

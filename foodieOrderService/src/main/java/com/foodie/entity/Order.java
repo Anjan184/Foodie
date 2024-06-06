@@ -1,9 +1,8 @@
-package com.foodie.order.entity;
+package com.foodie.entity;
 
-import com.foodie.order.Helper.MenuItems;
+import com.foodie.Helper.MenuItems;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

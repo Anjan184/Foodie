@@ -1,7 +1,7 @@
-package com.foodie.order.services;
+package com.foodie.services;
 
-import com.foodie.order.DTO.OrderDTO;
-import com.foodie.order.entity.Order;
+import com.foodie.DTO.OrderDTO;
+import com.foodie.entity.Order;
 
 import java.util.List;
 
