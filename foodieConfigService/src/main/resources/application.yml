@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Anjan184/MicroService-Config
-          username: Anjan184
-          password: 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
+#          uri: https://github.com/Anjan184/MicroService-Config
+#          username: Anjan184
+#         password: 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
           clone-on-start: true
 
 
