@@ -43,7 +43,7 @@ public class HotelController {
     @DeleteMapping(value = "delete/{hotelId}")
     public ResponseEntity<?> deleteHotel(@PathVariable("hotelId") String hotelId){
         hotelService.deleteHotel(hotelId);
-        return ResponseEntity.ok("User Deleted Successfully");
+        return ResponseEntity.ok("Hotel Deleted Successfully");
     }
 
 

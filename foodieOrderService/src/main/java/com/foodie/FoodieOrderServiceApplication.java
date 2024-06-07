@@ -15,13 +15,15 @@ public class FoodieOrderServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FoodieOrderServiceApplication.class, args);
 	}
+
 //	@Bean
-//	public ModelMapper modelMapper(){
-//		ModelMapper modelMapper=new ModelMapper();
+//	public ModelMapper modelMapper() {
+//		ModelMapper modelMapper = new ModelMapper();
 //		modelMapper.getConfiguration()
 //				.setPropertyCondition(Conditions.isNotNull())
 //				.setFieldMatchingEnabled(true)
 //				.setFieldAccessLevel(Configuration.AccessLevel.PRIVATE);
-//		return new ModelMapper();
+//		return modelMapper;
 	}
+//}
 

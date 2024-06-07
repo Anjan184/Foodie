@@ -44,7 +44,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order getsingleOrder(String orderId) {
         Optional<Order> or = orderRepository.findById(orderId);
-
         return or.orElse(null);
     }
 
@@ -73,7 +72,6 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     @Override
     public Order updateOrder(String orderId, OrderDTO orderDTO) {
-
         Optional<Order> oldorder = orderRepository.findById(orderId);
         if(oldorder.isPresent()){
             Order preorder = oldorder.get();

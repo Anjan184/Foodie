@@ -32,11 +32,9 @@ public class OrderController {
     @DeleteMapping("delete/{orderId}")
     public ResponseEntity<String> deleteOrder(@PathVariable String orderId){
         boolean isdeleted = orderService.deleteOrder(orderId);
-
         if(isdeleted){
             return ResponseEntity.ok("Order has been deleted");
         }
-
         return ResponseEntity.badRequest().body("Something went wrong !");
     }
 

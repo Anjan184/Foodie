@@ -28,7 +28,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .cors(cors->cors.disable())
-                .authorizeHttpRequests(auth->auth.requestMatchers("/users/**").authenticated().requestMatchers("/hotel/**").authenticated().requestMatchers("/items/**").authenticated().requestMatchers("/orders/**").authenticated().requestMatchers("/auth/**").permitAll())
+                .authorizeHttpRequests(auth->auth.requestMatchers("/users/**").authenticated()
+                                                 .requestMatchers("/hotel/**").authenticated()
+                                                 .requestMatchers("/items/**").authenticated()
+                                                 .requestMatchers("/orders/**").authenticated()
+                                                 .requestMatchers("/auth/**").permitAll()
+                                                 .requestMatchers("/create/**").permitAll()
+                )
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
