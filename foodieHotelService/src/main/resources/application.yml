@@ -11,7 +11,7 @@ spring:
   application:
     name: FOODIE-HOTEL-SERVICE
   config:
-    import: optional:configserver:http://localhost:8085
+#    import: optional:configserver:http://localhost:8085
 
 #eureka:
 #  instance:
