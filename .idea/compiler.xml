@@ -10,6 +10,7 @@
         <module name="foodieOrderService" />
         <module name="foodieGatewayService" />
         <module name="foodieHotelService" />
+        <module name="foodieConfigService" />
         <module name="FoodieServiceRegistry" />
         <module name="foodieUserService" />
       </profile>
@@ -21,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="FoodieServiceRegistry" options="-parameters" />
+      <module name="foodieConfigService" options="-parameters" />
       <module name="foodieGatewayService" options="-parameters" />
       <module name="foodieHotelService" options="-parameters" />
       <module name="foodieOrderService" options="-parameters" />

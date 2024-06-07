@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/foodieServiceRegistry/pom.xml" />
         <option value="$PROJECT_DIR$/foodieSecurityService/pom.xml" />
         <option value="$PROJECT_DIR$/foodieGatewayService/pom.xml" />
+        <option value="$PROJECT_DIR$/foodieConfigService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
