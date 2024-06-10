@@ -34,6 +34,12 @@ public class LabelServiceImpl implements LabelService {
 
     @Override
     public Label createLabel(Label label) {
+        //error message
+        Label existingLabel = labelRepository.findByDescription(label.getDescription());
+        if(existingLabel != null){
+            throw new RuntimeException("Label with the same name exists !");
+        }
+
         if(label.getLabelId() == null || label.getLabelId().isEmpty()){
             String randomlabelId = UUID.randomUUID().toString();
             label.setLabelId(randomlabelId);

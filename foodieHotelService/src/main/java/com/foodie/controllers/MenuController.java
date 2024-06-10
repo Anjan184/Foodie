@@ -37,15 +37,15 @@ public class MenuController {
       return ResponseEntity.status(HttpStatus.FOUND).body(items);
     }
 
-    ////updating the menu
-    @PutMapping(value = "update/{menuId}")
+    //updating the menu
+    @PutMapping(value = "/update/{menuId}")
     public ResponseEntity<MenuItems> updateItems(@PathVariable("menuId") String menuId, @RequestBody MenuItemsDTO menuItemsDTO){
         MenuItems menuItems=menuService.updateItems(menuId,menuItemsDTO);
         return ResponseEntity.ok(menuItems);
     }
 
     //deleting the menu
-    @DeleteMapping(value = "delete/{menuId}")
+    @DeleteMapping(value = "/delete/{menuId}")
     public ResponseEntity<?> deleteItems(@PathVariable("menuId") String menuId){
         boolean isdeleted = menuService.deleteItems(menuId);
         if(isdeleted){
@@ -54,5 +54,18 @@ public class MenuController {
             return ResponseEntity.badRequest().body("Something went wrong");
         }
     }
+
+    //getting single menuitems
+    @GetMapping("/{menuItemId}")
+    public ResponseEntity<MenuItems> getMenuItem(@PathVariable String menuItemId){
+        return ResponseEntity.ok(menuService.getMenuItem(menuItemId));
+    }
+
+    //Exception handling
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRunTimeException(RuntimeException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
+
 
 }

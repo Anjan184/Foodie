@@ -6,6 +6,8 @@ import com.foodie.entities.Label;
 import com.foodie.services.HotelService;
 import com.foodie.services.LabelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -89,6 +91,14 @@ public class LabelController {
         }
         labelService.createLabel(label);
         return ResponseEntity.ok(label);
+    }
+
+
+
+    //Exception handling
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRunTimeException(RuntimeException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
 

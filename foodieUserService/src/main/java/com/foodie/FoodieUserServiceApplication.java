@@ -24,7 +24,7 @@ public class FoodieUserServiceApplication {
 				.setPropertyCondition(Conditions.isNotNull())
 				.setFieldMatchingEnabled(true)
 				.setFieldAccessLevel(Configuration.AccessLevel.PRIVATE);
-		return new ModelMapper();
+		return modelMapper;
 	}
 
 }

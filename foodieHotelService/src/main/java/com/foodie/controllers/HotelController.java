@@ -1,10 +1,8 @@
 package com.foodie.controllers;
 
 import com.foodie.DTO.HotelDTO;
-import com.foodie.DTO.LabelDTO;
 import com.foodie.entities.Hotel;
 import com.foodie.entities.Label;
-import com.foodie.entities.MenuItems;
 import com.foodie.services.HotelService;
 import com.foodie.services.LabelService;
 import com.foodie.services.MenuService;
@@ -13,10 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/hotel")
@@ -35,35 +31,7 @@ public class HotelController {
     //create new hotel
     @PostMapping
     public ResponseEntity<Hotel> newHotel(@RequestBody Hotel hotel){
-        //menu items
-        System.err.println("menulist: " + hotel.getMenuItems());
-        System.err.println("menulist2: " + hotel.getMenuItems());
-
-        if (!hotel.getMenuItems().isEmpty()) {
-            System.out.println("enter");
-            List<MenuItems> menuList = new ArrayList<>();
-            System.out.println("ebter 2");
-
-            for (MenuItems menuItem : hotel.getMenuItems()) {
-                System.out.println("hotel 1: "+menuItem);
-                String menuid = UUID.randomUUID().toString();
-                System.out.println("menuid: " + menuid);
-                System.out.println("hotel 2: "+menuItem);
-                menuItem.setMenuItemId(menuid);
-                System.out.println("hotel 3: "+menuItem);
-//                menuItem.setHotel(hotel);
-                System.out.println("hotel 4: "+menuItem);
-                menuService.createItems(menuItem);
-                System.out.println("hotel 5: "+menuItem);
-//                menuList.add(menuItem);
-            }
-            hotel.setMenuItems(menuList);
-        }
-
-
-        //creating the hotel
-        Hotel hotel1= hotelService.createHotel(hotel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(hotel1);
+        return ResponseEntity.status(HttpStatus.CREATED).body( hotelService.createHotel(hotel));
     }
 
     //get all hotels
@@ -79,7 +47,6 @@ public class HotelController {
         Hotel hotel=hotelService.updateHotel(hotelId,hotelDTO);
         return ResponseEntity.status(HttpStatus.OK).body(hotel);
     }
-
 
 
     //delete hotel
@@ -130,6 +97,10 @@ public class HotelController {
         return ResponseEntity.ok(hotelService.findByLabel(labelId));
     }
 
-
+    //Exception handling
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRunTimeException(RuntimeException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
 
 }
