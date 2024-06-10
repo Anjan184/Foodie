@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderDTO {
 
-//    private String hotelId;
+
 //    private String deliveryId;
 //    private List<OrderItems> orderItems;
     private double orderTotal;
