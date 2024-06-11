@@ -6,6 +6,8 @@ import com.foodie.entities.Label;
 import com.foodie.services.HotelService;
 import com.foodie.services.LabelService;
 import com.foodie.services.MenuService;
+import com.foodie.repositories.HotelRepository;
+import com.foodie.services.impl.HotelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/foodieGatewayService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/foodieHotelService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/foodieOrderService/src/main/java" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/foodieConfigService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/foodieGatewayService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/foodieHotelService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/foodieOrderService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/foodieSecurityService/src/main/java" charset="UTF-8" />
+>>>>>>> master
     <file url="file://$PROJECT_DIR$/foodieServiceRegistry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/foodieUserService/src/main/java" charset="UTF-8" />
   </component>

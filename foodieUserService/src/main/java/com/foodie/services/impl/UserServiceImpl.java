@@ -1,5 +1,15 @@
 package com.foodie.services.impl;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.foodie.DTO.UserDTO;
 import com.foodie.entities.Hotel;
 import com.foodie.entities.Order;
@@ -8,14 +18,8 @@ import com.foodie.external.HotelService;
 import com.foodie.external.OrderService;
 import com.foodie.repositories.UserRepository;
 import com.foodie.services.UserService;
+
 import jakarta.transaction.Transactional;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -31,11 +35,13 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private HotelService hotelService;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public User saveUser(User user) {
         String randomUserId = UUID.randomUUID().toString();
         user.setUserid(randomUserId);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
        return userRepository.save(user);
     }
 
@@ -95,6 +101,9 @@ public class UserServiceImpl implements UserService {
         if(optionalUser.isPresent()) {
             User existingUser=optionalUser.get();
             modelMapper.map(userDTO, existingUser);
+            if (userDTO.getPassword() != null && !userDTO.getPassword().isEmpty()) {
+                existingUser.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+            }
            return userRepository.save(existingUser);
         }
         else {

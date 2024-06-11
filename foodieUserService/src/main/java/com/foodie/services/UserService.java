@@ -1,9 +1,9 @@
 package com.foodie.services;
 
+import java.util.List;
+
 import com.foodie.DTO.UserDTO;
 import com.foodie.entities.User;
-
-import java.util.List;
 
 public interface UserService {
     User saveUser(User user);

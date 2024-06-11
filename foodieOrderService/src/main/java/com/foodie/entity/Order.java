@@ -1,6 +1,7 @@
 package com.foodie.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.foodie.Helper.MenuItems;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "orders")
+@Table(name = "foodie_orders")
 public class Order {
 
     @Id
@@ -24,12 +25,14 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "order")
     @JsonManagedReference
-    private List<OrderItems> orderItems = new ArrayList<>();
+    // private List<OrderItems> orderItems = new ArrayList<>();
     private long orderTotal;
     private String orderStatus;
     private LocalDateTime orderDate;
 
     private String deliveryAddress;
+
+
 
 
 }

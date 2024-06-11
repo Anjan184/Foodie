@@ -10,23 +10,41 @@
         <module name="foodieOrderService" />
         <module name="foodieGatewayService" />
         <module name="foodieHotelService" />
+<<<<<<< HEAD
         <module name="foodieServiceRegistry" />
+=======
+        <module name="foodieConfigService" />
+        <module name="FoodieServiceRegistry" />
+>>>>>>> master
         <module name="foodieUserService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="FoodieOrderService" target="21" />
       <module name="FoodieServiceRegistry" target="21" />
+=======
+      <module name="foodieSecurityService" target="21" />
+>>>>>>> master
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="FoodieOrderService" options="-parameters" />
       <module name="FoodieServiceRegistry" options="-parameters" />
       <module name="foodieGatewayService" options="-parameters" />
       <module name="foodieHotelService" options="-parameters" />
       <module name="foodieOrderService" options="-parameters" />
       <module name="foodieServiceRegistry" options="-parameters" />
+=======
+      <module name="FoodieServiceRegistry" options="-parameters" />
+      <module name="foodieConfigService" options="-parameters" />
+      <module name="foodieGatewayService" options="-parameters" />
+      <module name="foodieHotelService" options="-parameters" />
+      <module name="foodieOrderService" options="-parameters" />
+      <module name="foodieSecurityService" options="-parameters" />
+>>>>>>> master
       <module name="foodieUserService" options="-parameters" />
     </option>
   </component>

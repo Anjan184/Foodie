@@ -2,10 +2,10 @@ package com.foodie.services.Impl;
 
 import com.foodie.DTO.OrderDTO;
 import com.foodie.entity.Order;
-import com.foodie.entity.OrderItems;
 import com.foodie.repository.OrderRepository;
 import com.foodie.services.OrderService;
 import jakarta.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,8 +37,8 @@ public class OrderServiceImpl implements OrderService {
 
         order.setOrderDate(dateFormatting()); //setting the order date
 
-        List<OrderItems> getorderItems = order.getOrderItems(); //getting the orderItems list
-        order.setOrderItems(new ArrayList<>()); // setting the orderItems list
+        // List<OrderItems> getorderItems = order.getOrderItems(); //getting the orderItems list
+        // order.setOrderItems(new ArrayList<>()); // setting the orderItems list
         //saving the order
         Order savedOrder = orderRepository.save(order);
 
@@ -78,6 +78,13 @@ public class OrderServiceImpl implements OrderService {
 //    public List<Order> getOrdersByHotelId(String hotelId) {
 //        return orderRepository.findByHotelId(hotelId);
 //    }
+        // return List.of();
+    // }
+
+    @Override
+    public List<Order> getOrdersByHotelId(String hotelId) {
+        return List.of();
+    }
 
     @Override
     public boolean deleteOrder(String orderId) {

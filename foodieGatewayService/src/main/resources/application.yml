@@ -11,17 +11,28 @@ spring:
         - id: FOODIE-USER-SERVICE
           uri: lb://FOODIE-USER-SERVICE
           predicates:
+<<<<<<< HEAD
             - Path=/users/**
+=======
+            - Path=/auth/login,/users/**,/create/**
+
+>>>>>>> master
 
         - id: FOODIE-HOTEL-SERVICE
           uri: lb://FOODIE-HOTEL-SERVICE
           predicates:
+<<<<<<< HEAD
             - Path=/hotel/** ,/items/**
+=======
+            - Path=/hotel/**,/items/**
+
+>>>>>>> master
 
         - id: FOODIE-ORDER-SERVICE
           uri: lb://FOODIE-ORDER-SERVICE
           predicates:
             - Path=/orders/**
+<<<<<<< HEAD
 #  config:
 #    import: configserver:http://localhost:8085
 
@@ -35,3 +46,10 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
+=======
+
+  config:
+    import: optional:configserver:http://localhost:8085
+
+
+>>>>>>> master

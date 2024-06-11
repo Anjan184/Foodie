@@ -22,6 +22,8 @@ public interface OrderService {
 
 //    //get orders by restaurantId
 //    List<Order> getOrdersByHotelId(String hotelId);
+    //get orders by restaurantId
+    List<Order> getOrdersByHotelId(String hotelId);
 
 
     //delete order

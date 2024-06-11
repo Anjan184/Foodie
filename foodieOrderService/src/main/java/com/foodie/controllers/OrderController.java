@@ -29,19 +29,17 @@ public class OrderController {
     }
 
     //delete order
-    @DeleteMapping("/delete/{orderId}")
-    public ResponseEntity<Boolean> deleteOrder(@PathVariable String orderId){
+    @DeleteMapping("delete/{orderId}")
+    public ResponseEntity<String> deleteOrder(@PathVariable String orderId){
         boolean isdeleted = orderService.deleteOrder(orderId);
-
         if(isdeleted){
-            return ResponseEntity.ok(true);
+            return ResponseEntity.ok("Order has been deleted");
         }
-
-        return ResponseEntity.badRequest().body(false);
+        return ResponseEntity.badRequest().body("Something went wrong !");
     }
 
     //update order
-    @PutMapping("/update/{orderId}")
+    @PutMapping("update/{orderId}")
     public ResponseEntity<Order> updateOrder(@PathVariable String orderId, @RequestBody OrderDTO orderDTO){
         Order order = orderService.updateOrder(orderId, orderDTO);
         return ResponseEntity.ok().body(order);
