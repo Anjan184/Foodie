@@ -1,15 +1,11 @@
 server:
   port: 8761
-<<<<<<< HEAD
 
-eureka:
-=======
+
 spring:
   application:
     name: FoodieServiceRegistry
 eureka:
-
->>>>>>> master
   instance:
     hostname: localhost
   client:

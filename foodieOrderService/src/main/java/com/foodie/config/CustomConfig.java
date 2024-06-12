@@ -10,15 +10,15 @@ import org.modelmapper.config.Configuration.AccessLevel;
 @Configuration
 public class CustomConfig {
 
-    @Bean
-    public ModelMapper modelMapper(){
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration()
-                .setPropertyCondition(Conditions.isNotNull())
-                .setFieldMatchingEnabled(true)
-                .setFieldAccessLevel(AccessLevel.PRIVATE);
-
-
-        return modelMapper;
-    }
+//    @Bean
+//    public ModelMapper modelMapper(){
+//        ModelMapper modelMapper = new ModelMapper();
+//        modelMapper.getConfiguration()
+//                .setPropertyCondition(Conditions.isNotNull())
+//                .setFieldMatchingEnabled(true)
+//                .setFieldAccessLevel(AccessLevel.PRIVATE);
+//
+//
+//        return modelMapper;
+//    }
 }

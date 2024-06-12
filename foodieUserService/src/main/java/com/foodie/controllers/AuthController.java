@@ -2,6 +2,7 @@ package com.foodie.controllers;
 
 import com.foodie.models.JwtRequest;
 import com.foodie.models.JwtResponse;
+import com.foodie.models.JwtService;
 import com.foodie.security.JwtHelper;
 import com.foodie.services.UserService;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -31,6 +33,9 @@ public class AuthController {
     @Autowired
     private JwtHelper helper;
 
+    @Autowired
+    private JwtService jwtService;
+
     private Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     @PostMapping("/login")
@@ -41,6 +46,7 @@ public class AuthController {
         JwtResponse response = JwtResponse.builder()
                 .jwtToken(token)
                 .userName(userDetails.getUsername()).build();
+        jwtService.setJwtToken(token);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

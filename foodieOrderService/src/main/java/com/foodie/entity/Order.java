@@ -23,8 +23,8 @@ public class Order {
     private String userId;
     private String deliveryId;
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "order")
-    @JsonManagedReference
+//    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "order")
+//    @JsonManagedReference
     // private List<OrderItems> orderItems = new ArrayList<>();
     private long orderTotal;
     private String orderStatus;

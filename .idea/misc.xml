@@ -4,35 +4,21 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/foodieUserService/pom.xml" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/FoodieOrderService/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieHotelService/pom.xml" />
+        <option value="$PROJECT_DIR$/foodieConfigService/pom.xml" />
         <option value="$PROJECT_DIR$/foodieGatewayService/pom.xml" />
-        <option value="$PROJECT_DIR$/FoodieServiceRegistry/pom.xml" />
+        <option value="$PROJECT_DIR$/foodieHotelService/pom.xml" />
         <option value="$PROJECT_DIR$/foodieOrderService/pom.xml" />
         <option value="$PROJECT_DIR$/foodieServiceRegistry/pom.xml" />
+        <option value="$PROJECT_DIR$/foodieUserService/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
-=======
-        <option value="$PROJECT_DIR$/foodieHotelService/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieOrderService/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieServiceRegistry/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieSecurityService/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieGatewayService/pom.xml" />
-        <option value="$PROJECT_DIR$/foodieConfigService/pom.xml" />
-      </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/foodieSecurityService/pom.xml" />
-      </set>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
->>>>>>> master
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ignoredFiles">
+    <set>
+      <option value="$PROJECT_DIR$/foodieSecurityService/pom.xml" />
+    </set>
   </component>
 </project>
